@@ -1,0 +1,45 @@
+<Window x:Class="AkasztofaJatek.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AkasztofaJatek"
+        mc:Ignorable="d"
+        Title="Akasztófa játék" Height="950" Width="600">
+    <Grid Margin="30">
+        <StackPanel>
+            <TextBlock Text="Akasztófa játék" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+
+            <TextBlock Text="Kategória:" Margin="0,20,0,10" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <ComboBox x:Name="comboCategory" Width="500" Height="30" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+
+            <TextBlock Text="Nehézség:" Margin="0,20,0,10" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <ComboBox x:Name="comboDifficulty" Width="500" Height="30" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold">
+                <ComboBoxItem Content="Könnyű – 8 hiba"/>
+                <ComboBoxItem Content="Normál – 6 hiba"/>
+                <ComboBoxItem Content="Nehéz – 4 hiba"/>
+            </ComboBox>
+
+            <Border BorderBrush="Gray" BorderThickness="1" Width="500" HorizontalAlignment="Left" Margin="0,20,0,0" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="A keresett szó:" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock x:Name="textWord" Text="_ _ _" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <TextBlock x:Name="textHangman" FontFamily="Consolas" FontSize="14" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+
+            <TextBlock x:Name="textMistakes" Text="Hibák száma: 0 / 6" Margin="0,15,0,0" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <TextBlock x:Name="textTries" Text="Hátralévő próbálkozások: 6" Margin="0,5,0,0" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <TextBlock x:Name="textUsedLetters" Text="Használt betűk: –" Margin="0,5,0,0" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold" TextWrapping="Wrap" Width="500"/>
+            <TextBlock x:Name="textScore" Text="Pontszám: 0" Margin="0,5,0,0" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+
+            <TextBlock Text="Adj meg egy betűt:" Margin="0,20,0,10" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <TextBox x:Name="textGuess" Width="500" Height="30" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold" MaxLength="1"/>
+
+            <Button x:Name="buttonTip" Content="Tippelés" Width="500" Height="40" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold" Margin="0,10,0,0" Click="Tip_Click"/>
+            <Button Content="Új játék" Width="500" Height="40" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold" Margin="0,10,0,0" Click="NewGame_Click"/>
+            <Button Content="Súgó" Width="500" Height="40" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold" Margin="0,10,0,0" Click="Help_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
